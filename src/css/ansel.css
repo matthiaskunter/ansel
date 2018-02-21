@@ -1,0 +1,238 @@
+/* Fotokabine.css
+*  (c) M.K.
+*/
+
+body{
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	background-color: #444;
+}
+
+input[type="number"]{
+	background-color: #666;
+	color: #999;
+	border:1px solid #777;
+	border-radius: 2px;
+	width: 60px;
+	margin: 3px;
+}	
+input[type="radio"]{
+	background-color: #666;
+	color: #999;
+	border:1px solid #777;
+	margin: 3px;
+}
+input[type="range"]{
+	margin: 10px;
+}	
+label{
+	font-size: 0.7em;
+	margin: 3px;
+}
+textarea{
+	background-color: #666;
+	color: #999;
+	border:1px solid #777;
+	border-radius: 2px;
+	width: 60px;
+	margin: 3px;
+}
+
+/* disabling area
+--------------------*/
+#disablingDiv
+{
+    display: none; 
+    z-index:1000;
+     
+    position: absolute; 
+    top: 0%; 
+    left: 0%; 
+    width: 100%; 
+    height: 100%; 
+ 
+    background-color: white; 
+    opacity:.30; 
+    filter: alpha(opacity=00); 
+}
+
+/* different areas of the app
+--------------------*/
+.area{
+	color: #333;
+	background-color: #555;
+	outline:#777 solid 1px;
+}
+.area h3{
+	margin-left:20px ;
+	font-weight:normal;
+}
+.common_tools_area{
+	position: relative;
+	width: 1200px;
+	height: 70px;
+	
+	/*display: flex;
+	align-items: center;*/
+}
+.filter_area{
+	/*position: relative;*/
+	float: left;
+	width: 200px;
+	height: 600px;
+	/*text-align: center;*/
+}
+.filter_tools_area{
+	/*position: relative;*/
+	float: left;
+	width: 1000px;
+	height: 150px;
+}
+.filter_tools_area h3{
+	font-size: 0.7em;
+}
+.tool_element{
+	float: left;
+	margin-left:20px; 
+	height:90px;
+	outline:#777 solid 1px;
+}
+.zoom_element_wrapper{
+	float: right;
+	width:120px;
+}
+.zoom_element_wrapper h3{
+	margin-left:0px;
+	font-size: 0.7em;
+}
+.zoom_element{
+	/*float: right;*/
+	margin-right:20px; 
+	height:90px;
+	outline:#777 solid 1px;
+}
+.switch_wrapper{
+	float:left;
+}
+.image_area{
+	position: relative;
+	float: left;
+	width: 1000px;
+	height: 450px;
+	background-color: #505050;
+	
+	overflow:hidden;
+}
+#filter_and_result{
+	width:1200px;
+	outline: #777 solid 1px;
+	overflow:hidden;
+}
+#filter_and_result_helper{
+	position: realtive;
+	width:1300px;
+}
+#my_camera{
+	position: realtive;
+	padding: 10px;
+}
+#image_canvas{
+	position:absolute;
+	background-color: #666;
+}
+/* overlay
+--------------------*/
+
+.overlay{
+	position: fixed;
+	background: #404040;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	height: 400px;
+	margin-top:-200px;
+	margin-left:-300px;
+	
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: center;
+}
+
+/* buttons
+--------------------*/
+.standard_btn{
+	position: relative;
+	padding:5px;
+	left: 10px;
+	/*top: 10px;*/
+	color: #999;
+	background: #666;
+	border:1px solid #777;
+	border-radius: 2px;
+	text-align: center;
+	vertical-align: middle;
+	
+	margin-left: 10px;
+	margin-top: 15px;
+}
+.standard_btn:link{
+	text-decoration:none;
+	color: #999;
+}
+.standard_btn:hover{
+	cursor:pointer;
+	color: #aaa;
+	border-color:#aaa;	
+}
+.disabled{
+	color: #777;
+}
+.disabled:hover{
+	cursor:default;
+	color: #777;
+	border-color:#777;
+}
+.left_btn{
+	float:left;
+}
+.right_btn{
+	float:right;
+	margin-right: 20px;
+}
+#load_btn{
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+#load_btn + label{
+	position: relative;
+	padding:5px;
+	left: 10px;
+	/*top: 10px;*/
+	color: #999;
+	background: #666;
+	border:1px solid #777;
+	border-radius: 2px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 1em;
+	
+	margin-left: 7px;
+	float: left;
+	margin-top: 15px;
+}
+#load_btn + label:hover{
+	cursor:pointer;
+	color: #aaa;
+	border-color:#aaa;
+}
+.filter_btn{
+	display: inline-block;
+	width: 90px;
+}
+.filter_btn_wrap{
+	height: 40px;
+}

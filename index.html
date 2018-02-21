@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+<link href="src/css/ansel.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="extern/js/webcam.js"></script>
+<script type="text/javascript" src="src/js/ansel.js"></script>
+<script type="text/javascript">
+
+	
+</script>
+</head>
+
+<body>
+		<div id="disablingDiv" ></div>
+
+		<div id="common_tools" class="area common_tools_area">
+			<a href="#" class="standard_btn left_btn" id="camera_btn" >Open Cam</a>
+			<input type="file" accept='image/*' class="standard_btn" id="load_btn" name="load_btn" >
+			<label for="load_btn">Choose a file</label>
+			<a href="#" class="standard_btn left_btn" id="btn_download" download="MyImage.png">Download</a>
+			<a href="#" class="standard_btn right_btn" id="undo_btn">Undo</a>
+		</div>
+		<div id="filter_and_result">
+			<div id="filter_and_result_helper">
+				<div id="filter" class="area filter_area">
+					<h3> Filter </h3>
+				</div>
+				<div id="filter_tools" class="area filter_tools_area"></div>
+				<div id="image" class="area image_area">
+					<canvas id="image_canvas"></canvas>
+				</div>
+				<div id="result"></div>
+			</div>
+		</div>
+</body>
+</html>
