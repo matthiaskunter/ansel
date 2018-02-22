@@ -129,18 +129,35 @@ window.onload = function(){
 		var camArea = document.createElement('DIV');
 		camArea.id = 'my_camera';
 		overlay.appendChild(camArea);
-		
-		
-		// create a button
-		var btn = document.createElement('A');
-		var t = document.createTextNode('Snapshot'); 
-		btn.appendChild(t);
-		btn.classList.add('standard_btn');
-		btn.onclick = take_snapshot;
-		btn.style.left = '0px';
-		overlay.appendChild(btn);
-		
+		Webcam.params.dest_width = 640;
+		Webcam.params.dest_height = 480;
 		Webcam.attach( '#my_camera' );
+		
+		// buttons
+		var btnArea = document.createElement('DIV');
+		btnArea.classList.add('overlay_btn_area');
+
+		// create snapshot button
+		var btn_snap = document.createElement('A');
+		var t_snap = document.createTextNode('Snapshot'); 
+		btn_snap.appendChild(t_snap);
+		btn_snap.classList.add('standard_btn');
+		btn_snap.classList.add('left_btn');
+		btn_snap.onclick = take_snapshot;
+		btn_snap.style.left = '0px';
+		btnArea.appendChild(btn_snap);
+		
+		// create cancel button
+		var btn_cancel = document.createElement('A');
+		var t_cancel = document.createTextNode('Cancel'); 
+		btn_cancel.appendChild(t_cancel);
+		btn_cancel.classList.add('standard_btn');
+		btn_cancel.classList.add('left_btn');
+		btn_cancel.onclick = cancel_snapshot;
+		btn_cancel.style.left = '0px';
+		btnArea.appendChild(btn_cancel);
+
+		overlay.appendChild(btnArea);
 	}
 
 	// File load button
@@ -200,6 +217,9 @@ function take_snapshot() {
 		dataURI = data_uri;
 	} );
 	
+	// close camera
+	Webcam.reset();
+
 	// remove the overlay
 	$('.overlay').remove();
 	// enable elements
@@ -208,6 +228,17 @@ function take_snapshot() {
 	document.querySelector('body').style.overflow = 'auto';
 	// show save button
 	$('#btn_download').show();
+}
+
+function cancel_snapshot(){
+
+	// close camera
+	Webcam.reset();
+
+	// remove the overlay
+	$('.overlay').remove();
+	// enable elements
+	document.getElementById('disablingDiv').style.display='none';
 }
 
 /*

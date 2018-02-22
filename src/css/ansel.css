@@ -157,7 +157,9 @@ textarea{
 	justify-content: center;
 	align-items: center;
 }
-
+.overlay_btn_area{
+	background: #404040;
+}
 /* buttons
 --------------------*/
 .standard_btn{
